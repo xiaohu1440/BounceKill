@@ -6,7 +6,8 @@ namespace PlayerState
     public class PlayerStateManager : MonoBehaviour
     {
         private IPlayerState currentState;
-        public PlayerAttributes attributes;
+        [HideInInspector]
+        public PlayerData attributes;
         public enum PlayerState
         {
             Idle,
@@ -18,6 +19,7 @@ namespace PlayerState
             new Dictionary<PlayerState, IPlayerState>();
         void Start()
         {
+            attributes = GetComponent<PlayerData>();
             RegisterState(PlayerState.Idle,new IdleState(this));
             RegisterState(PlayerState.Running,new RunningState(this));
             RegisterState(PlayerState.Dead,new DeadState(this));

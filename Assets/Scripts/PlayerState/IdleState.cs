@@ -12,14 +12,14 @@ namespace PlayerState
         }
         public void EnterState()
         {
-            Debug.Log("进入Idle"); 
+            
         }
 
         public void UpdateState()
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
-            Debug.Log(moveHorizontal+moveVertical);
+            
         
             if (moveHorizontal != 0 || moveVertical != 0)
             {

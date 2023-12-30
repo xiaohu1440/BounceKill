@@ -14,7 +14,7 @@ namespace PlayerState
         }
         public void EnterState()
         {
-            Debug.Log("进入Running");
+            
             rb = _stateManager.gameObject.GetComponent<Rigidbody2D>();
         }
 
@@ -32,17 +32,17 @@ namespace PlayerState
             }
 
             Vector2 currentVelocity = rb.velocity;
-            Debug.Log("H"+moveHorizontalRaw+"M"+moveVerticalRaw);
+            
             if (Mathf.Abs(moveHorizontalRaw) == 0 || Mathf.Abs(moveVerticalRaw) == 0)
             {
-                targetVelocity=new Vector2(moveHorizontal * _stateManager.attributes.playerSpeed,
-                    moveVertical * _stateManager.attributes.playerSpeed); 
-                Debug.Log("1111");
+                targetVelocity=new Vector2(moveHorizontal * _stateManager.attributes.speed,
+                    moveVertical * _stateManager.attributes.speed); 
+                
             }
             else
             {
-                targetVelocity = new Vector2(moveHorizontal * _stateManager.attributes.playerSpeed*0.7f,
-                    moveVertical * _stateManager.attributes.playerSpeed*0.7f); 
+                targetVelocity = new Vector2(moveHorizontal * _stateManager.attributes.speed*0.7f,
+                    moveVertical * _stateManager.attributes.speed*0.7f); 
             } 
             rb.velocity = Vector2.Lerp(currentVelocity, targetVelocity, 1f);
 
