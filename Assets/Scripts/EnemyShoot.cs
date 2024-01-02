@@ -1,3 +1,6 @@
+using System;
+using MoreMountains.Feedbacks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
@@ -48,7 +51,7 @@ public class EnemyShoot : MonoBehaviour
         if (bullet != null)
         {
             // 设置子弹的位置为敌人的位置
-
+            
             bullet.transform.position = transform.position;
                 
             
@@ -58,5 +61,28 @@ public class EnemyShoot : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
             bullet.GetComponent<TrailRenderer>().enabled = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            other.gameObject.GetComponent<BulletController>().isAttack = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet") && other.gameObject.GetComponent<BulletController>().isAttack == true)
+        {
+            gameObject.GetComponent<MMF_Player>().PlayFeedbacks();
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            Invoke("EnemyDestroy",0.25f);
+        }
+    }
+
+    private void EnemyDestroy()
+    {
+        Destroy(gameObject);
     }
 }

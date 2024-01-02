@@ -3,6 +3,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float speed;
+    public bool isAttack=false;
 
     void Update()
     {
