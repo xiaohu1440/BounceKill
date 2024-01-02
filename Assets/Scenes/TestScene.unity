@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc4dfd3e737c914f82e7a555255ada7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 4
-  speed: 1
+  fireInterval: 2
+  bulletSpeed: 0.3
 --- !u!1 &361726190
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,8 +403,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc4dfd3e737c914f82e7a555255ada7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 4
-  speed: 1
+  fireInterval: 2
+  bulletSpeed: 0.3
+--- !u!1 &416727940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6062587967461571509, guid: 847d1ae639f27b047aacdebfbf4be47f, type: 3}
+  m_PrefabInstance: {fileID: 5279692558845114655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &416727943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416727940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2f4d649fcdc874c9675a59e846d3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletMask:
+    serializedVersion: 2
+    m_Bits: 64
+  colliders: []
 --- !u!1 &494930835
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,8 +523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc4dfd3e737c914f82e7a555255ada7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 4
-  speed: 1
+  fireInterval: 2
+  bulletSpeed: 0.3
 --- !u!1 &780569302
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,8 +820,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc4dfd3e737c914f82e7a555255ada7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 4
-  speed: 1
+  fireInterval: 2
+  bulletSpeed: 0.3
 --- !u!1 &1137787993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,8 +1569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc4dfd3e737c914f82e7a555255ada7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 4
-  speed: 1
+  fireInterval: 2
+  bulletSpeed: 0.3
 --- !u!1 &1840381105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,8 +1798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc4dfd3e737c914f82e7a555255ada7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 4
-  speed: 1
+  fireInterval: 2
+  bulletSpeed: 0.3
 --- !u!1 &1859072357 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1490312705073305464, guid: 847d1ae639f27b047aacdebfbf4be47f, type: 3}
@@ -1881,8 +1902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc4dfd3e737c914f82e7a555255ada7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 4
-  speed: 1
+  fireInterval: 2
+  bulletSpeed: 0.3
 --- !u!1 &1914404828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,8 +2221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc4dfd3e737c914f82e7a555255ada7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 4
-  speed: 1
+  fireInterval: 2
+  bulletSpeed: 0.3
 --- !u!1 &2068036686
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,6 +4128,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1490312705073305464, guid: 847d1ae639f27b047aacdebfbf4be47f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1924828841}
+    - targetCorrespondingSourceObject: {fileID: 6062587967461571509, guid: 847d1ae639f27b047aacdebfbf4be47f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 416727943}
   m_SourcePrefab: {fileID: 100100000, guid: 847d1ae639f27b047aacdebfbf4be47f, type: 3}
 --- !u!1001 &6276143114705731178
 PrefabInstance:

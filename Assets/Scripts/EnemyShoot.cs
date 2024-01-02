@@ -11,7 +11,7 @@ public class EnemyShoot : MonoBehaviour
     // 引用对象池的变量
     private BulletPool bulletPool;
     private Transform player;
-    public float speed;
+    public float bulletSpeed;
 
     // 在游戏对象（敌人）启用时调用的方法
     void Start()
@@ -55,7 +55,7 @@ public class EnemyShoot : MonoBehaviour
             // 如果子弹有刚体组件，你可能还需要为其添加速度，这样它才会朝着旋转方向移动
             // bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
             Vector2 direction = (player.position - transform.position).normalized;
-            bullet.GetComponent<Rigidbody2D>().velocity = direction * speed;
+            bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
             bullet.GetComponent<TrailRenderer>().enabled = true;
         }
     }
