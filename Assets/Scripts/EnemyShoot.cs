@@ -7,6 +7,8 @@ public class EnemyShoot : MonoBehaviour
 {
     // 公有变量，用于设置子弹发射的间隔时间
     public float fireInterval = 2f;
+    public EnemyManager objectManager;
+    public string name = "方块敌人";
 
     // 私有变量，用于存储上一次发射子弹的时间
     private float lastFireTime;
@@ -21,7 +23,7 @@ public class EnemyShoot : MonoBehaviour
     {
         // 查找场景中的 ObjectPool 类的实例，通常通过在场景中放置一个 ObjectPool 对象或通过其他方式进行引用
         bulletPool = FindObjectOfType<BulletPool>();
-
+        objectManager = GameObject.FindObjectOfType<EnemyManager>();
         // 初始化上一次发射子弹的时间为当前时间
         lastFireTime = Time.time;
     }
@@ -83,6 +85,10 @@ public class EnemyShoot : MonoBehaviour
 
     private void EnemyDestroy()
     {
-        Destroy(gameObject);
+        objectManager.ReturnEnemy(name,gameObject);
+    }
+    private void OnDisable()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
